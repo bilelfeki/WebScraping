@@ -1,8 +1,9 @@
 ###########################################################
-#This script use the selenium library to get a huge data from 
-#a site it implements a simple algorithme which try to fetch data :
-
-#if the symbole ">" is present then it make click to go the next page and continue the fetch operation 
+#This script use the selenium library to get a huge data 
+#from a site it implements a simple algorithme which try to 
+#fetch data :if the symbole  ">" is present in the page then
+#it make a click automatically to go to the next page and
+#continue the fetch operation .
 #after that it put the data into lists then into csv files 
 ############################################################
 from selenium import webdriver
@@ -102,6 +103,7 @@ while(verifNextPresent()) :
         findBoxElement(i)
         
         time.sleep(0.8)
+	#if there is no element in a page we handle this with except   
         try :
             appendListwithException(listeNoms,driver.find_element_by_class_name("cats_manzah").find_element_by_tag_name("h1").text,"nom")
         except:
